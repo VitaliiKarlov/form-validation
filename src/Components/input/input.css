@@ -1,0 +1,66 @@
+.inputBox {
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.inputBox::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  transform: scale(0);
+  border-bottom: 2px solid #2196f3;
+  transition: 0.2s;
+}
+
+.labelText {
+  position: absolute;
+  line-height: 50px;
+  font-size: 18px;
+  color: #a5a5a5;
+  transform: translate(0, 0) scale(1);
+  transform-origin: top left;
+  transition: 0.2s;
+}
+
+.userInput {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  color: #545474;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+.userInput:invalid {
+  box-shadow: none;
+}
+
+.focus .labelText {
+  transform: translate(0, -20px) scale(0.8);
+  color: #2196f3;
+}
+
+.focus::after {
+  transform: scale(1.02);
+}
+
+.error .labelText {
+  color: #f44336;
+}
+
+.error::after {
+  border-bottom: 2px solid #f44336;
+}
+
+.success .labelText {
+  color: #4caf50;
+}
+
+.success::after {
+  border-bottom: 2px solid #4caf50;
+}
